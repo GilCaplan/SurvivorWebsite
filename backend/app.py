@@ -133,7 +133,20 @@ def get_stats():
         category_files = [f for f in all_files if f['category'] == category]
         stats['by_category'][category] = len(category_files)
 
-    return jsonify(stats)
+    return stats
+
+
+@app.route('/')
+def home():
+    """Root endpoint for health check"""
+    return jsonify({
+        'message': '🪇 Do you trust me? Backend is running!',
+        'endpoints': {
+            'random_content': '/api/random-content',
+            'health': '/api/health',
+            'stats': '/api/stats'
+        }
+    })
 
 
 if __name__ == '__main__':
@@ -143,8 +156,10 @@ if __name__ == '__main__':
         os.makedirs(folder_path, exist_ok=True)
 
     print("🪇 Do you trust me? Backend starting...")
-    print(f"📁 Media folder : {MEDIA_FOLDER}")
-    print("🚀 Server running on http://localhost:5000")
+    print(f"📁 Media folder: {MEDIA_FOLDER}")
 
-    app.run(debug=True, port=5000)
-    #hello
+    # Production configuration for Render
+    port = int(os.environ.get('PORT', 10000))
+    print(f"🚀 Server running on port {port}")
+
+    app.run(host='0.0.0.0', port=port, debug=False)
