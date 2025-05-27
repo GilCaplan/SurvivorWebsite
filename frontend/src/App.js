@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   // Replace this with your actual backend URL from Render
-  const BACKEND_URL = 'https://survivorwebsite-xxxx.onrender.com'; // Update this!
+  const BACKEND_URL = "https://doyoutrustme.onrender.com"
 
   const fetchStats = async () => {
     try {
