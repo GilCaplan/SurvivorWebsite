@@ -13,9 +13,12 @@ function App() {
     fetchStats();
   }, []);
 
+  // Replace this with your actual backend URL from Render
+  const BACKEND_URL = 'https://survivorwebsite-xxxx.onrender.com'; // Update this!
+
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/stats');
+      const response = await fetch(`${BACKEND_URL}/api/stats`);
       const data = await response.json();
       setStats(data);
     } catch (err) {
@@ -29,7 +32,7 @@ function App() {
     setButtonClicks(prev => prev + 1);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/random-content');
+      const response = await fetch(`${BACKEND_URL}/api/random-content`);
       const data = await response.json();
 
       if (data.success) {
@@ -48,7 +51,7 @@ function App() {
     if (!content || !content.file) return null;
 
     const { file, url } = content;
-    const baseUrl = 'http://127.0.0.1:5000';
+    const baseUrl = BACKEND_URL;
 
     switch (file.category) {
       case 'images':
