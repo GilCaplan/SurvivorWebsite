@@ -133,7 +133,7 @@ def get_stats():
         category_files = [f for f in all_files if f['category'] == category]
         stats['by_category'][category] = len(category_files)
 
-    return stats
+    return jsonify(stats)
 
 
 @app.route('/')
@@ -149,17 +149,19 @@ def home():
     })
 
 
-if __name__ == '__main__':
-    # Create media folders if they don't exist
+# Initialize media folders
+def create_media_folders():
+    """Create media folders if they don't exist"""
     for category in SUPPORTED_EXTENSIONS:
         folder_path = os.path.join(MEDIA_FOLDER, category)
         os.makedirs(folder_path, exist_ok=True)
 
-    print("🪇 Do you trust me? Backend starting...")
-    print(f"📁 Media folder: {MEDIA_FOLDER}")
 
-    # Production configuration for Render
+# Create folders on startup
+create_media_folders()
+
+# For Gunicorn WSGI server
+if __name__ == '__main__':
+    # Development server (fallback)
     port = int(os.environ.get('PORT', 10000))
-    print(f"🚀 Server running on port {port}")
-
     app.run(host='0.0.0.0', port=port, debug=False)
