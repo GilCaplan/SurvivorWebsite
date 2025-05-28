@@ -49,6 +49,26 @@ body {
   margin-bottom: 20px;
 }
 
+/* Team Description Styles */
+.team-description {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #2d3436;
+}
+
+.team-caption {
+  font-size: 1rem;
+  color: #636e72;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Main Content */
 .main-content {
   margin-bottom: 30px;
@@ -247,6 +267,14 @@ body {
     font-size: 1.2rem;
   }
 
+  .team-title {
+    font-size: 1.1rem;
+  }
+
+  .team-caption {
+    font-size: 0.9rem;
+  }
+
   .trust-button {
     padding: 20px 40px;
     font-size: 1.5rem;
@@ -274,5 +302,13 @@ body {
 
   .content-display {
     padding: 20px;
+  }
+
+  .team-title {
+    font-size: 1rem;
+  }
+
+  .team-caption {
+    font-size: 0.85rem;
   }
 }

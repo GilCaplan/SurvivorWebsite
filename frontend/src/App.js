@@ -131,6 +131,14 @@ function App() {
         </header>
 
         <div className="main-content">
+          <div className="team-description">
+            <p className="team-title"><strong>Team Gil & Donny</strong></p>
+            <p className="team-caption">
+              In the challenge, do you trust me? Donny and Gil go through an experience,
+              if you trust me then perhaps click the button to find out what happened! enjoy :)
+            </p>
+          </div>
+
           <button
             className={`trust-button ${loading ? 'loading' : ''}`}
             onClick={handleTrustClick}
