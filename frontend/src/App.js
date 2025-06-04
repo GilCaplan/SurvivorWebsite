@@ -147,6 +147,13 @@ function App() {
             {loading ? 'Loading...' : 'Do you trust me?'}
           </button>
 
+          <button
+            className="youtube-button"
+            onClick={() => window.open('https://youtu.be/zMKwYHO0-Ys', '_blank')}
+          >
+            🎥 Watch the Full Experience
+          </button>
+
           {error && (
             <div className="error-message">
               <p>❌ {error}</p>

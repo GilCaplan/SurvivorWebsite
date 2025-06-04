@@ -88,9 +88,31 @@ body {
   box-shadow: 0 10px 25px rgba(255, 71, 87, 0.4);
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* YouTube Button */
+.youtube-button {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 40px;
   position: relative;
   overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trust-button:hover {
@@ -99,9 +121,20 @@ body {
   background: linear-gradient(45deg, #ff3838, #ff2828);
 }
 
+.youtube-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 0, 0, 0.5);
+  background: linear-gradient(45deg, #cc0000, #990000);
+}
+
 .trust-button:active {
   transform: translateY(0);
   box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+.youtube-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
 }
 
 .trust-button.loading {
@@ -280,6 +313,11 @@ body {
     font-size: 1.5rem;
   }
 
+  .youtube-button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+  }
+
   .stats {
     flex-direction: column;
     align-items: center;
@@ -298,6 +336,11 @@ body {
   .trust-button {
     padding: 15px 30px;
     font-size: 1.2rem;
+  }
+
+  .youtube-button {
+    padding: 10px 25px;
+    font-size: 1rem;
   }
 
   .content-display {
